@@ -1,29 +1,29 @@
 from tkinter import *
 from tkinter import Tk, StringVar, ttk, messagebox
+from tkinter import filedialog as fd
+#pip install tkinter
 from PIL import Image, ImageTk
+#pip install pillow
 from tkcalendar import Calendar, DateEntry
+#pip install tkcalendar
 from datetime import date
 from view import *
-from tkinter import filedialog as fd
+
 
 #Cores
 cor0 = '#2e2d2b' # Cinza Escuro
 cor1 = '#feffff' # Branco
 cor2 = '#4fa882' # Verde Agua
-cor3 = '#38576b' # Azul
-cor4 = '#403d3d' # Preto
-cor5 = '#e06636' # Laranja
-cor6 = '#038cfc' # Azul Claro
-cor7 = '#3fbfb9' # Verde Claro
-cor8 = '#263238' # Azul Escuro
-cor9 = '#e9edf5' # Cinza Claro
+Cor3 = '#403d3d' # Preto
+Cor4 = '#3fbfb9' # Verde Claro
+Cor5 = '#e9edf5' # Cinza Claro
 
 
 #Janela
 janela = Tk()
 janela.title('')
 janela.geometry('900x600')
-janela.configure(background=cor9)
+janela.configure(background=Cor5)
 janela.resizable(width=False, height=False)
 style = ttk.Style(janela)
 style.theme_use('clam')
@@ -184,7 +184,7 @@ def escolher_imagem():
     imagem = imagem.resize((160,160))
     imagem = ImageTk.PhotoImage(imagem)
 
-    l_imagem = Label(frameCorpo, image=imagem, bg=cor1, fg=cor4)
+    l_imagem = Label(frameCorpo, image=imagem, bg=cor1, fg=Cor3)
     l_imagem.place(x=700, y=0)
 
 #Função Ver Imagem
@@ -205,7 +205,7 @@ def ver_imagem():
     imagem = imagem.resize((160,160))
     imagem = ImageTk.PhotoImage(imagem)
 
-    l_imagem = Label(frameCorpo, image=imagem, bg=cor1, fg=cor4)
+    l_imagem = Label(frameCorpo, image=imagem, bg=cor1, fg=Cor3)
     l_imagem.place(x=700, y=10)
 
 
@@ -216,44 +216,44 @@ def ver_imagem():
 app_img = Image.open('prancheta.png')
 app_img = app_img.resize((45,45))
 app_img = ImageTk.PhotoImage(app_img)
-app_logo = Label(frameCabecario, image=app_img, text=' Inventário de Clube', width=900, compound=LEFT, relief=RAISED, anchor=NW, font=('Verdana 20 bold'), bg=cor1, fg=cor4)
+app_logo = Label(frameCabecario, image=app_img, text=' Inventário de Clube', width=900, compound=LEFT, relief=RAISED, anchor=NW, font=('Verdana 20 bold'), bg=cor1, fg=Cor3)
 app_logo.place(x=0, y=0)
 
 
 #Corpo
 
 #Entradas
-l_nome = Label(frameCorpo, text='Nome', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_nome = Label(frameCorpo, text='Nome', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_nome.place(x=10, y=10)
 e_nome = Entry(frameCorpo, width=30, justify='left', relief=SOLID)
 e_nome.place(x=130, y=12)
 
-l_posicao = Label(frameCorpo, text='Posição', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_posicao = Label(frameCorpo, text='Posição', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_posicao.place(x=10, y=40)
 e_posicao = Entry(frameCorpo, width=30, justify='left', relief=SOLID)
 e_posicao.place(x=130, y=42)
 
-l_num = Label(frameCorpo, text='Numero', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_num = Label(frameCorpo, text='Numero', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_num.place(x=10, y=70)
 e_num = Entry(frameCorpo, width=30, justify='left', relief=SOLID)
 e_num.place(x=130, y=72)
 
-l_nasc = Label(frameCorpo, text='Nacionalidade', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_nasc = Label(frameCorpo, text='Nacionalidade', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_nasc.place(x=10, y=100)
 e_nasc = Entry(frameCorpo, width=30, justify='left', relief=SOLID)
 e_nasc.place(x=130, y=102)
 
-l_data = Label(frameCorpo, text='Data da compra', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_data = Label(frameCorpo, text='Data da compra', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_data.place(x=10, y=130)
 e_data = DateEntry(frameCorpo, width=12, bordewidth=2, year=2024)
 e_data.place(x=130, y=132)
 
-l_fim_ctt = Label(frameCorpo, text='Fim do contrato', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_fim_ctt = Label(frameCorpo, text='Fim do contrato', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_fim_ctt.place(x=10, y=160)
 e_fim_ctt = DateEntry(frameCorpo, width=12, bordewidth=2, year=2024)
 e_fim_ctt.place(x=130, y=162)
 
-l_valor = Label(frameCorpo, text='Valor da compra', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_valor = Label(frameCorpo, text='Valor da compra', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_valor.place(x=10, y=190)
 e_valor = Entry(frameCorpo, width=30, justify='left', relief=SOLID)
 e_valor.place(x=130, y=192)
@@ -261,7 +261,7 @@ e_valor.place(x=130, y=192)
 #Botões
 
 #Botão Imagem
-l_img = Label(frameCorpo, text='Foto do Jogador', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=cor4)
+l_img = Label(frameCorpo, text='Foto do Jogador', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor1, fg=Cor3)
 l_img.place(x=10, y=222)
 b_img = Button(frameCorpo,command=escolher_imagem , width=29, text='CARREGAR', compound=CENTER, anchor=CENTER, overrelief=RIDGE, font=('Ivy 8'), bg=cor1, fg=cor0)
 b_img.place(x=130, y=222)
@@ -295,14 +295,14 @@ b_item = Button(frameCorpo,command=ver_imagem, image=img_item, width=95, text=' 
 b_item.place(x=330, y=222)
 
 #Labels Qtd e Valores
-l_total = Label(frameCorpo, text='', width=14, height=2, anchor=CENTER, font=('Ivy 18 bold'), bg=cor7, fg=cor1)
+l_total = Label(frameCorpo, text='', width=14, height=2, anchor=CENTER, font=('Ivy 18 bold'), bg=Cor4, fg=cor1)
 l_total.place(x=450, y=17)
-l_total_ = Label(frameCorpo, text='      VALOR TOTAL DO CLUBE      ', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor7, fg=cor1)
+l_total_ = Label(frameCorpo, text='      VALOR TOTAL DO CLUBE      ', height=1, anchor=NW, font=('Ivy 10 bold'), bg=Cor4, fg=cor1)
 l_total_.place(x=450, y=12)
 
-l_qtd = Label(frameCorpo, text='', width=14, height=2,pady=5, anchor=CENTER, font=('Ivy 18 bold'), bg=cor7, fg=cor1)
+l_qtd = Label(frameCorpo, text='', width=14, height=2,pady=5, anchor=CENTER, font=('Ivy 18 bold'), bg=Cor4, fg=cor1)
 l_qtd.place(x=450, y=90)
-l_qtd_ = Label(frameCorpo, text='   QUANTIDADE DE JOGADORES  ', height=1, anchor=NW, font=('Ivy 10 bold'), bg=cor7, fg=cor1)
+l_qtd_ = Label(frameCorpo, text='   QUANTIDADE DE JOGADORES  ', height=1, anchor=NW, font=('Ivy 10 bold'), bg=Cor4, fg=cor1)
 l_qtd_.place(x=450, y=92)
 
 #Tabela de itens
