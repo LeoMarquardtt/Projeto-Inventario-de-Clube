@@ -10,6 +10,7 @@ from datetime import date
 from view import *
 
 
+
 #Cores
 cor0 = '#2e2d2b' # Cinza Escuro
 cor1 = '#feffff' # Branco
@@ -77,7 +78,6 @@ def inserir():
     e_data.delete(0, 'end')
     e_fim_ctt.delete(0, 'end')
     e_valor.delete(0, 'end')
-
     mostrar()
 
 #Função Atualizar
